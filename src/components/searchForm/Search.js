@@ -1,6 +1,6 @@
 import { default as React } from 'react';
 import { Button, Divider, Dropdown, Form, Grid, Header, Icon, Label, Segment } from 'semantic-ui-react';
-const { getCountriesAsDropDown } = require('./../../utils/CountryUtils')
+const getCountriesAsDropDown = require('./../../utils/CountryUtils')
 
 class AppSearch extends React.Component {
     state = {
@@ -67,7 +67,7 @@ class AppSearch extends React.Component {
                                                             search
                                                             selection
                                                             placeholder='Select a location'
-                                                            options={getCountriesAsDropDown()}
+                                                            options={getCountriesAsDropDown.default()}
                                                             name='coordinates'
                                                             onChange={this.handleLocationSelect} />
                                                     </Form.Field>

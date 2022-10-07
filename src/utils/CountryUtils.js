@@ -16,4 +16,4 @@ function getCountriesAsDropDown(){
 }
 
 
-module.exports ={getCountriesAsDropDown}
+export default getCountriesAsDropDown
