@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
-import AppHeader from './components/AppHeader';
-import Footer from './components/Footer';
-import Results from './components/Results';
-import Search from './components/Search';
+import Footer from './components/footer/Footer';
+import AppHeader from './components/header/AppHeader';
+import Results from './components/results/Results';
+import Search from './components/searchForm/Search';
 const {getAdressWithInRange} = require('./services/AddressService')
-const {getStaticImage} = require('./services/MapService')
 
 function App() {
   const [range, setRange] = useState(100)
@@ -60,7 +59,7 @@ function App() {
       <AppHeader/>
       <div className="searchContainer">
         <Search searchKeyword = {searchHandler} />
-        <Results offices = {searchResult} isSearchRequested = {startSearch} sourceCoord = {getSourceCoordinates}/>
+        <Results offices = {searchResult || []} isSearchRequested = {startSearch} sourceCoord = {getSourceCoordinates}/>
       </div>
       <Footer className = "AppFooter"/>
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Divider, Dropdown, Grid, Header, Pagination } from 'semantic-ui-react';
-import AddressCard from './AddressCard';
-import NoResults from './NoResults';
+import AddressCard from '../card/AddressCard';
+import NoResults from '../error/NoResults';
 
 function Results(props) {
     console.log('Props in Result is', props);
@@ -79,11 +79,6 @@ function Results(props) {
         if (props.offices && props.offices.length === 0) {
             return <NoResults />
         } else {
-            const items = props.offices
-
-            const paginatedItems = offices && offices.length > 0 ? offices.slice(begin, end) :items.slice(begin, end)
-            console.log('paginatedItems',paginatedItems);
-            console.log('Offices',offices);
             return <Container fluid textAlign='center'>
                 <Header as='h1'>
                     Nearest Offices
@@ -94,6 +89,7 @@ function Results(props) {
                     <div className="paginationResults">
                 <Pagination
                     activePage={activePage}
+                    className= 'paginationBox'
                     boundaryRange={1}
                     onPageChange={handlePaginationChange}
                     size='mini'

@@ -1,4 +1,4 @@
-const path = 'http://localhost:4000/api/v1/'
+const path = process.env.REACT_APP_NODE_HOSTNAME
 const getAllAddressesPath = path + 'addresses'
 
 export async function getAllAddresses() {
@@ -12,14 +12,18 @@ export async function getAllAddresses() {
 
 
 export async function getAdressWithInRange(data) {
-    const response = await fetch(getAllAddressesPath, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({request: data})
-      })
-
-    let result =  await response;
-    console.log(result);
+    console.log('Request is', data);
+    let result = []
+    if(data){
+        const response = await fetch(getAllAddressesPath, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+          })
+    
+        result =  await response;
+        console.log(result);
+    }
 
     return result.json();
 

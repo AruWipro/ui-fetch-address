@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Container, Header } from 'semantic-ui-react';
-import { getAllAddresses } from './../services/AddressService';
-import Results from './Results';
+import { Button, Container, Header, Message } from 'semantic-ui-react';
+import { getAllAddresses } from './../../services/AddressService';
+import Results from './../results/Results';
 
 function NoResults () {
     const [addresses, setAddress] = useState([])
@@ -32,10 +32,16 @@ function NoResults () {
     if(!isButtonClicked){
         console.log('Inside Not clicked...');
     return <Container fluid textAlign='center'>
+        <Message negative compact padded color='red'>
         <Header as='h1' >
             Sorry! No Offices Found
         </Header>
+        <p>
+            Please update your location or increase the distance
+        </p>
+        
         <Button raised color= 'orange' onClick={loadFullData}>View all partners </Button>
+        </Message>
     </Container>
     }
 

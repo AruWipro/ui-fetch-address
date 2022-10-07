@@ -5,11 +5,9 @@ function AppHeader() {
   return (
       <Segment inverted padded = 'small' piled raised  size marge >
         <Header as= 'h1'>
-          Finder  <Icon name = 'search orange' size = 'large'/>
+          Finder  <Icon className = 'search-icon' name = 'search orange' size = 'large'/>
         </Header>
-        
       </Segment>
-    
   )
 }
 
