@@ -3,23 +3,24 @@ import { Button, Container, Header, Message } from 'semantic-ui-react';
 import { getAllAddresses } from './../../services/AddressService';
 import Results from './../results/Results';
 
-function NoResults () {
+function NoResults (props) {
     const [addresses, setAddress] = useState([])
     const [isButtonClicked, setButtonClick] = useState(false)
     
-    useEffect(() => {
+     useEffect(() => {
+        setAddress([])
+        setButtonClick(false)
+     },[props.offices])
+    
+    const loadFullData = async() => {
+        console.log('Load full data...');
+        setButtonClick(true)
         async function loadAllAddresses(){
             const addresses = await getAllAddresses()
             console.log('All addresses are',addresses);
             setAddress(addresses)
         }
-        loadAllAddresses()
-    },[isButtonClicked])
-    
-    const loadFullData = () => {
-        console.log('Load full data...');
-        setButtonClick(true)
-        return 
+        await loadAllAddresses()
     }
 
     const getSourceCoordinates = () => {
@@ -28,9 +29,10 @@ function NoResults () {
           longitude:-0.142571,
       }
     }
-
-    if(!isButtonClicked){
-        console.log('Inside Not clicked...');
+    console.log('Addresses are',addresses);
+   
+    if(addresses.length == 0){
+        console.log('Inside Not addresses...');
     return <Container fluid textAlign='center'>
         <Message negative compact padded color='red'>
         <Header as='h1' >
@@ -45,8 +47,8 @@ function NoResults () {
     </Container>
     }
 
-    else {
-        console.log('Inside Clicked...');
+    else if (isButtonClicked && addresses.length > 0)  {
+        console.log('Inside addresses...');
         return <Results offices = {addresses} sourceCoord = {getSourceCoordinates} isSearchRequested = {true}/>
     }
 }

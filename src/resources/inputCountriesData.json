@@ -1463,62 +1463,15 @@
         "latitude" : -15.9333,
         "longitude" : -5.7
       },
-  {
-        "country" : "Saint Kitts and Nevis",
-        "alpha2" : "KN",
-        "alpha3" : "KNA",
-        "numeric" : 659,
-        "latitude" : 17.3333,
-        "longitude" : -62.75
+      {
+        "country" : "Starbucks Cafe Central London",
+        "alpha2" : "SCL",
+        "alpha3" : "SCL",
+        "numeric" : 657,
+        "latitude" : 51.5144636,
+        "longitude" : -0.142571
       },
-  {
-        "country" : "Saint Lucia",
-        "alpha2" : "LC",
-        "alpha3" : "LCA",
-        "numeric" : 662,
-        "latitude" : 13.8833,
-        "longitude" : -61.1333
-      },
-  {
-        "country" : "Saint Pierre and Miquelon",
-        "alpha2" : "PM",
-        "alpha3" : "SPM",
-        "numeric" : 666,
-        "latitude" : 46.8333,
-        "longitude" : -56.3333
-      },
-  {
-        "country" : "Saint Vincent and the Grenadines",
-        "alpha2" : "VC",
-        "alpha3" : "VCT",
-        "numeric" : 670,
-        "latitude" : 13.25,
-        "longitude" : -61.2
-      },
-  {
-        "country" : "Samoa",
-        "alpha2" : "WS",
-        "alpha3" : "WSM",
-        "numeric" : 882,
-        "latitude" : -13.5833,
-        "longitude" : -172.3333
-      },
-  {
-        "country" : "San Marino",
-        "alpha2" : "SM",
-        "alpha3" : "SMR",
-        "numeric" : 674,
-        "latitude" : 43.7667,
-        "longitude" : 12.4167
-      },
-  {
-        "country" : "Sao Tome and Principe",
-        "alpha2" : "ST",
-        "alpha3" : "STP",
-        "numeric" : 678,
-        "latitude" : 1,
-        "longitude" : 7
-      },
+  
   {
         "country" : "Saudi Arabia",
         "alpha2" : "SA",
