@@ -11,11 +11,15 @@ class AppSearch extends React.Component {
     }
     onInputchange = (event) => {
         console.log('Event is', event.target.value);
-        if (event.target.name === 'range') {
-            if (!/[0-9]/.test(event.target.value)) {
+        const name = event.target.name
+        const value = event.target.value
+        if (name === 'range') {
+            if (!/[0-9]/.test(value)) {
                 this.setState({ range: '' });
-            } else
-                this.setState({ range: event.target.value });
+            } else if(value.toString().length > 4){
+                this.setState({ range: parseInt(value.toString().slice(0,4))});
+            }else
+                this.setState({ range: value });
         }
     }
 
