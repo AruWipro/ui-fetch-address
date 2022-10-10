@@ -16,9 +16,16 @@ function NoResults (props) {
         console.log('Load full data...');
         setButtonClick(true)
         async function loadAllAddresses(){
-            const addresses = await getAllAddresses()
-            console.log('All addresses are',addresses);
-            setAddress(addresses)
+            const savedAdd = localStorage.getItem('addresses')
+            let obj = JSON.parse(savedAdd)
+            console.log('Loading from session...',obj);
+            if(!obj){
+                obj = await getAllAddresses()
+                console.log('Setting to session...');
+                localStorage.setItem('addresses',JSON.stringify(obj))
+            }
+            setAddress(obj)
+            console.log('All addresses are',obj);
         }
         await loadAllAddresses()
     }
@@ -31,7 +38,7 @@ function NoResults (props) {
     }
     console.log('Addresses are',addresses);
    
-    if(addresses.length == 0){
+    if(addresses.length === 0){
         console.log('Inside Not addresses...');
     return <Container fluid textAlign='center'>
         <Message negative compact padded color='red'>

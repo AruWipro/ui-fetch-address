@@ -41,6 +41,13 @@
 
 # Where should I test it?
 - The applications is hosted on a cloud platform, so that it can be tested easily.
+- Use locations like this
+    - Singapore
+    - United Kingdom
+    - Australia
+    - Oxfordshire
+    - Mexico
+    - Nairobi
 
 ##Hosted URL
 - The application can be tested [here](https://fetch-address-ui.onrender.com "here")
