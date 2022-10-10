@@ -19,6 +19,7 @@
 ## Features
 - User can specify any source country [![Add Country](Input.png "Add Country")](https://github.com/AruWipro/task-tracker-react/blob/2a272fc634ff0b410e79d9e274aa2b19b3869c3d/Input.png "Add Country")
 - User should enter only numbers in the range field **[Only 4 Digits]**
+- Data is **paginated** and **sorted based on the distance in ascending order**
 - If there are valid results found, you would see distance and a google map with the destination location
 -[![Results](Results "Results")](https://github.com/AruWipro/task-tracker-react/blob/1f434bbcee5fafc82392e99c2c498c8a6fd142c7/Results.png "Results")
 - You can click on the map which takes you to a popup
@@ -73,6 +74,10 @@ For Both react and nodeJs applications, checkout the code and run the below comm
 npm i
 npm start 
 ```
+# NOTE
+- API hosted on a free cloud provider. 
+- There is a cold start problem, so initial loading time is slightly high
+
 # Postman Collection
 
 You can check the collection [here](https://documenter.getpostman.com/view/3688471/2s83ziMi1e#8822902c-e066-4401-93af-9919a0b38b04 "here")
