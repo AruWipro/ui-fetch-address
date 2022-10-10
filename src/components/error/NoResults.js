@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Header, Message } from 'semantic-ui-react';
-import { getAllAddresses } from './../../services/AddressService';
+import data from './../../resources/data.json';
 import Results from './../results/Results';
-
 function NoResults (props) {
     const [addresses, setAddress] = useState([])
     const [isButtonClicked, setButtonClick] = useState(false)
@@ -10,6 +9,7 @@ function NoResults (props) {
      useEffect(() => {
         setAddress([])
         setButtonClick(false)
+
      },[props.offices])
     
     const loadFullData = async() => {
@@ -20,8 +20,10 @@ function NoResults (props) {
             let obj = JSON.parse(savedAdd)
             console.log('Loading from session...',obj);
             if(!obj){
-                obj = await getAllAddresses()
+               // obj = await getAllAddresses()
+               obj = data
                 console.log('Setting to session...');
+                // Saving to localStorage
                 localStorage.setItem('addresses',JSON.stringify(obj))
             }
             setAddress(obj)
