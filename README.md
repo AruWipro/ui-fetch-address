@@ -20,6 +20,7 @@
 - User can specify any source country [![Add Country](Input.png "Add Country")](https://github.com/AruWipro/task-tracker-react/blob/2a272fc634ff0b410e79d9e274aa2b19b3869c3d/Input.png "Add Country")
 - User should enter only numbers in the range field **[Only 4 Digits]**
 - Data is **paginated** and **sorted based on the distance in ascending order**
+- Default addresses are loaded in the **local addresses** so that further API call's aren't required
 - If there are valid results found, you would see distance and a google map with the destination location
 -[![Results](Results "Results")](https://github.com/AruWipro/task-tracker-react/blob/1f434bbcee5fafc82392e99c2c498c8a6fd142c7/Results.png "Results")
 - You can click on the map which takes you to a popup
