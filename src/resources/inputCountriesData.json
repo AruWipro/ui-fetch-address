@@ -1232,6 +1232,16 @@
     "longitude": 17
   },
   {
+    "country": "Nairobi, Kenya",
+    "alpha2": "NB",
+    "alpha3": "NBK",
+    "numeric": 516,
+    "latitude": -1.2921,
+    "longitude": 36.8219
+  },
+  
+
+  {
     "country": "Nauru",
     "alpha2": "NR",
     "alpha3": "NRU",
