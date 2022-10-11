@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Divider, Dropdown, Grid, Header, Pagination } from 'semantic-ui-react';
+import { Container, Dimmer, Divider, Dropdown, Grid, Header, Loader, Pagination } from 'semantic-ui-react';
 import AddressCard from '../card/AddressCard';
 import NoResults from '../error/NoResults';
 
@@ -63,13 +63,17 @@ function Results(props) {
 
     console.log('isDataLoaded', props.isDataLoaded);
 
-    if (props.isSearchRequested) {
+    if (props.isSearchRequested && props.isDataLoaded) {
         if (props.offices && props.offices.length === 0) {
             console.log(props.isSearchRequested);
             return <NoResults offices={props.offices}/>
         } else {
             return loadData()
         }
+    } else if(props.isSearchRequested){
+        return <Dimmer active>
+            <Loader>Loaing...</Loader>
+        </Dimmer>
     }
 
     function loadData() {
@@ -78,6 +82,9 @@ function Results(props) {
                 Nearest Offices
             </Header>
             <Divider />
+            <Dimmer active = {props.isLoading}>
+                <Loader>Loading</Loader>
+            </Dimmer>
             <div className=" controllerWrapper">
                 <div className="resultControllers">
                     <div className="paginationResults">

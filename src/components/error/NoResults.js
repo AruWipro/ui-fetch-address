@@ -20,6 +20,7 @@ function NoResults (props) {
             let obj = JSON.parse(savedAdd)
             console.log('Loading from session...',obj);
             if(!obj){
+                // Could have used a cache . 
                // obj = await getAllAddresses()
                obj = data
                 console.log('Setting to session...');
@@ -58,7 +59,7 @@ function NoResults (props) {
 
     else if (isButtonClicked && addresses.length > 0)  {
         console.log('Inside addresses...');
-        return <Results offices = {addresses} sourceCoord = {getSourceCoordinates} isSearchRequested = {true}/>
+        return <Results offices = {addresses} sourceCoord = {getSourceCoordinates} isSearchRequested = {true} isDataLoaded={true}/>
     }
 }
 
