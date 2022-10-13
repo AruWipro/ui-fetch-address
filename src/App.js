@@ -51,10 +51,11 @@ function App() {
   },[sourceLatitude,range])
 
   return (
+    // <div className="App" style={{backgroundImage: `url(${bgImage})`,backgroundRepeat:"inherit",backgroundSize:"contain", width:"100%", height:"100%"}}>
     <div className="App">
       <AppHeader/>
       <div className="searchContainer">
-        <Search searchKeyword = {searchHandler} />
+        <Search searchKeyword = {searchHandler}/>
         <Results offices = {searchResult || []} isSearchRequested = {startSearch} sourceCoord = {getSourceCoordinates} isDataLoaded = {isDataLoaded}/>
       </div>
       <Footer className = "AppFooter"/>

@@ -51,11 +51,10 @@ function Results(props) {
 
     const sortValues = (e, data) => {
         setSortBy(data.value)
-        let sortedOffices = []
         if (data.value === 'name') {
-            sortedOffices = props.offices.sort(compareOrganization)
+            props.offices.sort(compareOrganization)
         } else if (data.value === 'distance') {
-            sortedOffices = props.offices.sort((a, b) => a.address.distance - b.address.distance)
+            props.offices.sort((a, b) => a.address.distance - b.address.distance)
         }
         resetPageProperties()
 
@@ -71,9 +70,7 @@ function Results(props) {
             return loadData()
         }
     } else if(props.isSearchRequested){
-        return <Dimmer active>
-            <Loader>Loaing...</Loader>
-        </Dimmer>
+        return getLoader()
     }
 
     function loadData() {
@@ -124,5 +121,11 @@ function Results(props) {
     }
 }
 
-export default Results
 
+function getLoader() {
+    return <Dimmer active>
+        <Loader size="large">Loaing...</Loader>
+    </Dimmer>;
+}
+
+export default Results

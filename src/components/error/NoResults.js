@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Header, Message } from 'semantic-ui-react';
-import data from './../../resources/data.json';
+import { getAllAddresses } from './../../services/AddressService';
 import Results from './../results/Results';
 function NoResults (props) {
     const [addresses, setAddress] = useState([])
@@ -20,10 +20,8 @@ function NoResults (props) {
             let obj = JSON.parse(savedAdd)
             console.log('Loading from session...',obj);
             if(!obj){
-                // Could have used a cache . 
-               // obj = await getAllAddresses()
-               obj = data
-                console.log('Setting to session...');
+                obj = await getAllAddresses()
+                console.log('Setting to session...',obj);
                 // Saving to localStorage
                 localStorage.setItem('addresses',JSON.stringify(obj))
             }
